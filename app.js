@@ -4,23 +4,50 @@ const request = require('request');
 //Require express framework
 const express = require("express");
 const app = express() //invoke express
+//Requiring body parser (express middlewear)
+const bodyParser = require("body-parser");
+
+//Access all static files within public folder
+app.use(express.static("public"));
+//Access all static files within body-parser folder
+app.use(bodyParser.urlencoded({extended: true}));
 //Setup template engine
 app.set("view engine", "ejs")
 
-//SETTING UP ROOT PATH (HOME PAGE)
-app.get("/", function(req, res){
-    res.render("index"); //renders the view and sends equival;ent HTML to client
-})
-
 // //INPUT VARIABLES
 // //created value for api key
-// let apiKey = '951dfd3c3028861db0a5daec2f517d79';
+const apiKey = '951dfd3c3028861db0a5daec2f517d79';
 // //created value for city
 // let city = 'abuja';
 // //created value for url
 // let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
 
-// //MAKING API CALL- TESTING ENDPOINTS
+//SETTING UP ROOT PATH (HOME PAGE)
+app.get("/", function(req, res){
+    res.render("index", {weather: null, error: null}); //renders the view and sends equivalent HTML to client
+})
+
+//SETTING UP POST REQUESTS
+app.post("/", function(req, res){
+    let city = req.body.city;
+    let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
+request(url, function (err, response, body){ //checking for an error
+        if(err){ //if there's an error, render to the index.ejs page
+            res.render("index", {weather: null, error: "Error, please try again"});
+        } else { //if no API error, parse JSON into usable JavaScript object
+            let weather = JSON.parse(body) //convert JSON into readable JS Object format
+            if(weather.main == undefined){ //if user inputs invalid character, e.g. 3, dshdhdhdh
+                res.render("index", {weather: null, error: "Error, please try again"});
+            } else { //if weather.main != undefined --> if user inputs valid location
+                let weatherText = `It's ${weather.main.temp} degrees in ${weather.name}!`;
+                res.render("index", {weather: weatherText, error: null});
+            }
+        }
+    });
+})
+
+
+// // //MAKING API CALL- TESTING ENDPOINTS
 // request(url, function (err, response, body) {
 //   if(err){
 //     console.log('error:', error);
