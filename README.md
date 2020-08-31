@@ -6,7 +6,7 @@ This is phase 1 of my weather forecast app. Thus far I have been able to make a 
 - Current weather data API doc: https://openweathermap.org/current
 - The code for this can be found in the app_1.js file
 
-Phase 2 of my weather forecast app invoplves making a request to the Open Weather Map API using the 5 day weather forecast API.
+Phase 2 of my weather forecast app involves making a request to the Open Weather Map API using the 5 day weather forecast API.
 - 5 day weather forecast API docs:
 https://openweathermap.org/forecast5#name5
 
