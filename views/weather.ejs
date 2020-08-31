@@ -1,0 +1,35 @@
+<!-- WEATHER PAGE TEMPLATE -->
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Weather app</title>
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <h1>Welcome to the Weather page!</h1>
+        <div class="search">
+            <form action="/" method="POST">
+                <!-- <input type="submit" value="Get Weather"> -->
+                <input name="city" type="text" placeholder="Enter any global location" required>
+            </form>
+        <!-- <h3>Use the search bar to view the weather of any worldwide location</h3> -->
+        <% if(forecast!== null){ %>
+        <!-- if user enters valid weather lcoation -->
+        <p><%= forecast %></p>
+        <% } %>
+
+        <% if(error !== null){ %>
+        <!-- if error isn't equal to nothing (if there's an error) -->
+        <p><%= error %></p>
+        <% } %>
+        </div>
+        <div class="search">
+            <form action="/">
+                <!-- Create forecast button to automatically take user to homepage -->
+                <button><i class="forecastButton"></i>Home</button>
+            </form>
+        </div>
+    </body>
+</html>
