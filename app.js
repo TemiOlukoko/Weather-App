@@ -82,7 +82,7 @@ app.post("/", function (req, res) {
         // for (var i = 0; i < mainText.length; i++){
         //     console.log(mainText);
         // } 
-    };
+    });
   });
 
 //ROUTE TO WEATHER PAGE
