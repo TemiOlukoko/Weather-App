@@ -1,69 +1,100 @@
-//USING THE CURRENT WEATHER API
+//USING THE FORECAST API
 
 //Require request package
-const request = require('request');
+const request = require("request"); //use http also
 //Require express framework
 const express = require("express");
-const app = express() //invoke express
-//Requiring body parser (express middlewear)
+const app = express(); //invoke express
+//Requiring body parser (express middleware)
 const bodyParser = require("body-parser");
+const { exception } = require("console");
 
 //Access all static files within public folder
 app.use(express.static("public"));
 //Access all static files within body-parser folder
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 //Setup template engine
-app.set("view engine", "ejs")
+app.set("view engine", "ejs");
 
 // //INPUT VARIABLES
 // //created value for api key
-const apiKey = '951dfd3c3028861db0a5daec2f517d79';
-// //created value for city
-// let city = 'abuja';
-// //created value for url
-// let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
+const url = "https://api.openweathermap.org/data/2.5/forecast";
+const apiKey = "951dfd3c3028861db0a5daec2f517d79";
+
+//CREATE CONSTANTS FOR CURRENT TEMP. FEELS LIKE TEMP & HUMIDITY
 
 //SETTING UP ROOT PATH (HOME PAGE)
-app.get("/", function(req, res){
-    res.render("index", {weather: null, error: null}); //renders the view and sends equivalent HTML to client
-})
+app.get("/", function (req, res) {
+  res.render("index", { forecast: null, error: null });
+  // res.render("index", {weather: null, error: null}); //renders the view and sends equivalent HTML to client
+});
 
 //SETTING UP POST REQUESTS
-app.post("/", function(req, res){
-    let city = req.body.city;
-    // let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
-request(url, function (err, response, body){ //checking for an error
-        if(err){ //if there's an error, render to the index.ejs page
-            res.render("weather", {weather: null, error: "Error, please try again"});
-        } else { //if no API error, parse JSON into usable JavaScript object
-            let weather = JSON.parse(body) //convert JSON into readable JS Object format
-            if(weather.main == undefined){ //if user inputs invalid character, e.g. 3, dshdhdhdh
-                res.render("weather", {weather: null, error: "Error, please try again"});
-            } else { //if weather.main != undefined --> if user inputs valid location
-                let weatherText = `It's ${weather.main.temp} degrees Celsius in ${weather.name}!`;
-                res.render("weather", {weather: weatherText, error: null});
-            }
-        }
-    });
-})
+app.post("/", function (req, res) {
+  const city = req.body.city;
 
-//TEST TO TRY ROUTING TO WEATHER PAGE
-app.get('/weather', function (req, res) {
-    res.render("weather", {weather: null, error: null})
+  let options = {
+    method: "POST",
+    url: `${url}?q=${city}&units=metric&appid=${apiKey}`,
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  let response; //declare response outside of loop
+  let daysArray = []; //declare response outside of loop
+  let forecast = request(options, function (error, response, body) { 
+    if (error) {
+      res.render("weather", {forecast: null, error: "Error, please try again"});
+    }
+    response = this.response;
+    // console.log(response.body)
+    if (response.statusCode == 200){
+        // FOR LOOPS THAT PRINTS WEATHER.DESCRIPTION
+        //let listText = JSON.parse(body).list[0].weather[0].description;
+        let weatherData = JSON.parse(body);
+        //console.log(weatherData);
+        //GET 5 ARRAYS BASED ON SPECIFIC DAY
+        const time = new Date().getHours(); //getHours() method returns the hour in the specified date according to local time
+        //1. get hold of current time (24 hour format)
+        weatherData.list.forEach(function (single){
+          var textHour = single.dt_txt.substring(11, 13);
+        //2. get hold of hour from weatherData
+        //example "dt_txt": "2020-07-28 21:00:00" ( var textHour= '21')
+          var numberHour = parseInt(textHour, 10);
+        //3. Convert string '21' to int 21 !
+          var difference = Math.abs(time - numberHour);
+        //4. To get latest time, find out time difference
+        //example if it was 22:00 the 22(time)-21(numberHour)=1(difference)
+          if (
+            difference === 1 || //3
+            difference === 0 ||
+            //(time === 23 && numberHour === 21) || //time = 11pm (23:00) - current time in my location & numbe Hour = api time 
+            (time === 23 && numberHour === 21) ||
+            (time === 24 && numberHour === 0) || //this one
+            (time === 2 && numberHour === 00)
+          ) 
+        {
+          daysArray.push(single);
+        }
+      });
+      console.log("Yooooo" + JSON.stringify(daysArray[0]));
+      //res.render("weather", { daysArray: daysArray });
+        //FOR LOOP THAT PRINTS WEATHER.MAIN INFO
+        //let mainText = JSON.parse(body).list[0].weather[0].main;
+        //console.log(mainText)
+        // for (var i = 0; i < mainText.length; i++){
+        //     console.log(mainText);
+        // }
+      } 
+    });
   });
 
-
-// // //MAKING API CALL- TESTING ENDPOINTS
-// request(url, function (err, response, body) {
-//   if(err){
-//     console.log('error:', error);
-//   } else {
-//     console.log('body:', body);
-//   }
-// });
+//ROUTE TO WEATHER PAGE
+app.get("/weather", function (req, res) {
+    res.render("weather", {forecast: null, error: null})
+});
 
 //CREATE SERVER THATS LISTENING ON PORT 3000 FOR CONNECTIONS
 app.listen(3000, function () {
-    console.log("You are now connected to the server!!!")
-})
+  console.log("You are now connected to the server!!!");
+});

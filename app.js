@@ -41,6 +41,7 @@ app.post("/", function (req, res) {
     },
   };
   let response; //declare response outside of loop
+  let daysArray = []; //declare response outside of loop
   let forecast = request(options, function (error, response, body) { 
     if (error) {
       res.render("weather", {forecast: null, error: "Error, please try again"});
@@ -51,37 +52,29 @@ app.post("/", function (req, res) {
         // FOR LOOPS THAT PRINTS WEATHER.DESCRIPTION
         //let listText = JSON.parse(body).list[0].weather[0].description;
         let weatherData = JSON.parse(body);
-        console.log(weatherData);
-        //GET 5 ARRAYS BASED ON SPECIFIC DAY
-        const time = new Date().getHours();
-        //1. get hold of current time (24 hour format)
-        weatherData.list.forEach(function (single){
-          var textHour = single.dt_txt.substring(11, 13);
-        //2. get hold of hour from weatherData
-        //example "dt_txt": "2020-07-28 21:00:00" ( var textHour= '21')
-          var numberHour = parseInt(textHour, 10);
-        //3. Convert string '21' to int 21 !
-          var difference = Math.abs(time - numberHour);
-        //4. To get latest time, find out time difference
-        //example if it was 22:00 the 22(time)-21(numberHour)=1(difference)
-          if (
-            difference === 1 ||
-            difference === 0 ||
-            (time === 23 && numberHour === 21) ||
-            (time === 24 && numberHour === 0) ||
-            (time === 2 && numberHour === 00)
-          ) 
-        {
-          daysArray.push(single);
+        //console.log(weatherData);
+        const today = new Date('2020-05-21T00:00:00.000Z');
+        const day = 60 * 60 * 24 * 1000;
+        
+        const dateBins = {};
+        const nBins = 6; // there can be reports for up to 6 distinct dates
+
+        for (let i = 0; i < nBins; i++) {
+          // set up a bin (empty array) for each date
+          const date = new Date(today.getTime() + i * day);
+          dateBins[date.getDate()] = [];
         }
-      });
-      console.log(daysArray);
-        //FOR LOOP THAT PRINTS WEATHER.MAIN INFO
-        //let mainText = JSON.parse(body).list[0].weather[0].main;
-        //console.log(mainText)
-        // for (var i = 0; i < mainText.length; i++){
-        //     console.log(mainText);
-        // } 
+
+        const reports = weatherData.list;
+        //console.log(reports); //works upto here
+        for (const report of reports) { //not sure what this is doing?
+          console.log(reports);
+            const reportDate = new Date(report.dt * 1000).getDate();
+            //console.log(reportDate);
+            dateBins[reportDate].push(report);
+        }
+      console.log(dateBins);
+      } 
     });
   });
 
