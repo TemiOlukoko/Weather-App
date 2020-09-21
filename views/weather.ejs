@@ -17,8 +17,8 @@
         </form>
         <h3>Use the search bar to view the weather of any worldwide location</h3>
         <!-- Read in data in JSON format and stringify it -->
-        <p><%= JSON.stringify(weatherData) %></p>
-        <!-- <p><%= (weatherData) %></p> -->
+        <!-- <p><%= JSON.stringify(weatherData) %></p> -->
+        <p><%= (weatherData) %></p>
     </div>
     <div class="search">
         <form action="/">
@@ -31,7 +31,7 @@
             <% console.log("weathfhfhfhfhf") %>
     </script>
     <!-- LOGIC TO PRINT OUT INDIVIDUAL DATA TO HTML PAGE -->
-    <!-- <% function weatherTemplate(weather){ %>
+    <% function weatherTemplate(weather){ %>
   <% return ` %>
   <div class="animal">
       <h1>Temperature: <%= ${weather.main.temp} %></h1>
@@ -44,7 +44,7 @@
   <% document.getElementById("app1").innerHTML = ` %>
   <h1 class="app-title"> <%= (${weatherData.length} %> is the visibility) </h1>
   <p>The temperature now is <% ${weatherData.map(weatherTemplate).join('')} %>
-      <% ` %> -->
+      <% ` %>
 </body>
 
 </html>
