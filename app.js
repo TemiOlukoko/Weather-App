@@ -7,7 +7,7 @@ const express = require("express");
 const app = express(); //invoke express
 //Requiring body parser (express middleware)
 const bodyParser = require("body-parser");
-const { exception } = require("console");
+//const { exception } = require("console");
 
 //Access all static files within public folder
 app.use(express.static("public"));
@@ -33,54 +33,63 @@ app.get("/", function (req, res) {
 app.post("/", function (req, res) {
   const city = req.body.city;
 
-  let options = {
+  const options = {
     method: "POST",
     url: `${url}?q=${city}&units=metric&appid=${apiKey}`,
     headers: {
       "Content-Type": "application/json",
     },
   };
-  let response; //declare response outside of loop
-  let daysArray = []; //declare response outside of loop
-  let forecast = request(options, function (error, response, body) { 
+
+  request(options, function (error, response, body) {
     if (error) {
-      res.render("weather", {forecast: null, error: "Error, please try again"});
+      res.render("weather", { forecast: null, error: "Error, please try again" });
     }
-    response = this.response;
-    // console.log(response.body)
-    if (response.statusCode == 200){
-        // FOR LOOPS THAT PRINTS WEATHER.DESCRIPTION
-        //let listText = JSON.parse(body).list[0].weather[0].description;
-        let weatherData = JSON.parse(body);
-        //console.log(weatherData);
-        const today = new Date('2020-05-21T00:00:00.000Z');
-        const day = 60 * 60 * 24 * 1000;
+
+    if (response.statusCode === 200) {
+      //parse data into object
+      const weatherData = JSON.parse(body);
+      //getting list out of weatherData object 
+      const reports = weatherData.list;
+
+      //creating empty array that data will go into
+      const reportsByDay = {};
+
+      //for every report,
+      const weatherDataList = reports.map(item => {
+        //get dt (date timestamp) from API 
+        const dateTime = new Date(item.dt * 1000)
+        //get the current date
+        //getDate() is a method on built in Date() JS object. Converts 10/09/20 to just '10'
+        const day = dateTime.getDate()
         
-        const dateBins = {};
-        const nBins = 6; // there can be reports for up to 6 distinct dates
+        //At this point, the code looks like this (if we previously got 10):
+        /*
+        .
+        .
+        ],
+          10: [{}]
+        ]
+        .
+        .
+        */
 
-        for (let i = 0; i < nBins; i++) {
-          // set up a bin (empty array) for each date
-          const date = new Date(today.getTime() + i * day);
-          dateBins[date.getDate()] = [];
+        if (!reportsByDay[day]) {
+          reportsByDay[day] = [];  //if reports by day is undefined (false), set it to an empty array
         }
-
-        const reports = weatherData.list;
-        //console.log(reports); //works upto here
-        for (const report of reports) { //not sure what this is doing?
-          console.log(reports);
-            const reportDate = new Date(report.dt * 1000).getDate();
-            //console.log(reportDate);
-            dateBins[reportDate].push(report);
-        }
-      console.log(dateBins);
-      } 
-    });
+        reportsByDay[day].push({ ...item }); //... is the spread operator. Copies code from one array into another
+        //reportsByDay at the begining is the same as []
+        //console.log(reportsByDay);
+        return reportsByDay;
+      });
+      res.render("weather", {weatherData: Array.from([...new Set(weatherDataList)])});//removes duplicates and turns into array
+    }
   });
+});
 
 //ROUTE TO WEATHER PAGE
 app.get("/weather", function (req, res) {
-    res.render("weather", {forecast: null, error: null})
+  res.render("weather", { forecast: null, error: null })
 });
 
 //CREATE SERVER THATS LISTENING ON PORT 3000 FOR CONNECTIONS

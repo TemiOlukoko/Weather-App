@@ -14,16 +14,8 @@
                 <!-- <input type="submit" value="Get Weather"> -->
                 <input name="city" type="text" placeholder="Enter any global location" required>
             </form>
-        <!-- <h3>Use the search bar to view the weather of any worldwide location</h3> -->
-        <% if(forecast!== null){ %>
-        <!-- if user enters valid weather lcoation -->
-        <p><%= forecast %></p>
-        <% } %>
-
-        <% if(error !== null){ %>
-        <!-- if error isn't equal to nothing (if there's an error) -->
-        <p><%= error %></p>
-        <% } %>
+        <h3>Use the search bar to view the weather of any worldwide location</h3>
+        <p><%= JSON.stringify(weatherData) %></p>
         </div>
         <div class="search">
             <form action="/">
@@ -31,5 +23,9 @@
                 <button><i class="forecastButton"></i>Home</button>
             </form>
         </div>
+        <div id="app1"></div>
+        <script>
+            <% console.log("weathfhfhfhfhf") %>
+        </script>
     </body>
 </html>
