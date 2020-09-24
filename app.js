@@ -82,14 +82,14 @@ app.post("/", function (req, res) {
         //console.log(reportsByDay);
         return reportsByDay;
       });
-      res.render("weather", {weatherData: Array.from([...new Set(weatherDataList)])});//removes duplicates and turns into array
+      res.render("weather.html", {weatherData: Array.from([...new Set(weatherDataList)])});//removes duplicates and turns into array
     }
   });
 });
 
 //ROUTE TO WEATHER PAGE
-app.get("/weather", function (req, res) {
-  res.render("weather", { forecast: null, error: null })
+app.get("/weather.html", function (req, res) {
+  res.render("weather.html", { forecast: null, error: null })
 });
 
 //CREATE SERVER THATS LISTENING ON PORT 3000 FOR CONNECTIONS

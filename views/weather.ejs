@@ -17,8 +17,6 @@
         </form>
         <h3>Use the search bar to view the weather of any worldwide location</h3>
         <!-- Read in data in JSON format and stringify it -->
-        <!-- <p><%= JSON.stringify(weatherData) %></p> -->
-        <p><%= (weatherData) %></p>
     </div>
     <div class="search">
         <form action="/">
@@ -27,24 +25,13 @@
         </form>
     </div>
     <div id="app1"></div>
-    <script>
-            <% console.log("weathfhfhfhfhf") %>
-    </script>
     <!-- LOGIC TO PRINT OUT INDIVIDUAL DATA TO HTML PAGE -->
-    <% function weatherTemplate(weather){ %>
-  <% return ` %>
-  <div class="animal">
-      <h1>Temperature: <%= ${weather.main.temp} %></h1>
-      <h1>Humidity: <%= ${weather.main.humidity} %></h1>
-      <h1>Date & Time: <%= ${weather.dt_txt} %></h1>
-      <h1>Feels like: <%= ${weather.main.feels_like} %></h1>
-  </div>
-  <% `} %>
-
-  <% document.getElementById("app1").innerHTML = ` %>
-  <h1 class="app-title"> <%= (${weatherData.length} %> is the visibility) </h1>
-  <p>The temperature now is <% ${weatherData.map(weatherTemplate).join('')} %>
-      <% ` %>
+    <script>
+    <% if (document) { %>
+        <h2><% document.body %></h2>
+    <% } %>
+    </script>
+    <!-- TEST TO SEE IF DOCUMENT EXISTS!! -->
 </body>
 
 </html>
