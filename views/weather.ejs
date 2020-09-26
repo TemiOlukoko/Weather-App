@@ -9,7 +9,19 @@
 </head>
 
 <body>
+
     <h1>Welcome to the Weather page!</h1>
+    <div>
+      <% Object.keys(weatherData[0]).forEach(weather => { %>
+        <% weatherData[0][weather].forEach(day => { %>
+          <p>Temperature: <%= day.main.temp %></p>
+          <p>Humidity: <%= day.main.humidity %></p>
+          <p>Date & Time: <%= day.dt_txt %></p>
+          <p>Feels like: <%= day.main.feels_like %></p>
+        <% })%>
+      <% }) %>
+    </div>
+
     <div class="search">
         <form action="/" method="POST">
             <!-- <input type="submit" value="Get Weather"> -->
@@ -26,11 +38,6 @@
     </div>
     <div id="app1"></div>
     <!-- LOGIC TO PRINT OUT INDIVIDUAL DATA TO HTML PAGE -->
-    <script>
-    <% if (document) { %>
-        <h2><% document.body %></h2>
-    <% } %>
-    </script>
     <!-- TEST TO SEE IF DOCUMENT EXISTS!! -->
 </body>
 
