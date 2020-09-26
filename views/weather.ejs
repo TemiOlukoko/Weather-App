@@ -12,8 +12,8 @@
 
     <h1>Welcome to the Weather page!</h1>
     <div>
-      <% Object.keys(weatherData[0]).forEach(weather => { %>
-        <% weatherData[0][weather].forEach(day => { %>
+      <% Object.keys(weatherData[0]).forEach(key => { %>
+        <% weatherData[0][key].forEach(day => { %>
           <p>Temperature: <%= day.main.temp %></p>
           <p>Humidity: <%= day.main.humidity %></p>
           <p>Date & Time: <%= day.dt_txt %></p>
