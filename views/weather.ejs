@@ -12,7 +12,10 @@
 
     <h1>Welcome to the Weather page!</h1>
     <div>
+        <!-- Object.key gets all keys (object in array) in object -->
+        <!-- for each key, list it temporaarily as a key -->
       <% Object.keys(weatherData[0]).forEach(key => { %>
+        <!-- for each object in array, call it day -->
         <% weatherData[0][key].forEach(day => { %>
           <p>Temperature: <%= day.main.temp %></p>
           <p>Humidity: <%= day.main.humidity %></p>
@@ -28,7 +31,6 @@
             <input name="city" type="text" placeholder="Enter any global location" required>
         </form>
         <h3>Use the search bar to view the weather of any worldwide location</h3>
-        <!-- Read in data in JSON format and stringify it -->
     </div>
     <div class="search">
         <form action="/">
@@ -36,9 +38,6 @@
             <button><i class="forecastButton"></i>Home</button>
         </form>
     </div>
-    <div id="app1"></div>
-    <!-- LOGIC TO PRINT OUT INDIVIDUAL DATA TO HTML PAGE -->
-    <!-- TEST TO SEE IF DOCUMENT EXISTS!! -->
 </body>
 
 </html>
