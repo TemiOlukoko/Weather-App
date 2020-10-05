@@ -1,0 +1,67 @@
+<!-- WEATHER PAGE TEMPLATE -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Weather app</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+</head>
+<!-- <style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+</style> -->
+<body>
+
+    <h1>Welcome to the Weather page!</h1>
+
+    <div class="search">
+        <form action="/" method="POST">
+            <!-- <input type="submit" value="Get Weather"> -->
+            <!-- <input name="city" type="text" placeholder="Enter any global location" required> -->
+        </form>
+        <!-- <h3>Use the search bar to view the weather of any worldwide location</h3> -->
+        <!-- Read in data in JSON format and stringify it -->
+    </div>
+    <div class="search">
+        <form action="/">
+            <!-- Create forecast button to automatically take user to homepage -->
+            <!-- <button><i class="forecastButton"></i>Home</button> -->
+        </form>
+    </div>
+
+    <div>
+        <table class="forecastTable">
+            <!-- First row in table -->
+            <tr>
+                <th>Temperature</th>
+                <th>Humid</th>
+                <th>Date and Time</th>
+            </tr>
+            <!-- key here is referring to each 'key' in array of objects -->
+            <!-- first get all keys (individual parts of object) in object -->
+            <!-- for each one, list it temporarily as a key -->
+            <% Object.keys(weatherData[0]).forEach(key => { %>
+            <!-- for each object in the array, call it day -->
+            <% weatherData[0][key].forEach(day => { %>
+            <!-- Second row in table -->
+            <!-- <tr> -->
+                <!-- <td>Temi</td> -->
+                <!-- <td>Olukoko</td>
+                <td>Female</td> -->
+                <!-- <td>Temp: <%= day.main.temp %></td>
+                <td>Humid: <%= day.main.humidity %></td>
+                <td>D & T: <%= day.dt_txt %></td>
+                <td>FL: <%= day.main.feels_like %></td> -->
+            <!-- </tr> -->
+        <% })%>
+        <% }) %>
+    </table>
+    </div>
+
+</body>
+
+</html>
