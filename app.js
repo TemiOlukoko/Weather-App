@@ -49,7 +49,7 @@ app.post("/", function (req, res) {
     if (response.statusCode === 200) {
       //parse data into object
       const weatherData = JSON.parse(body);
-      //getting list out of weatherData object 
+      //getting list out of weatherData object
       const reports = weatherData.list;
 
       //creating empty array that data will go into
@@ -57,12 +57,12 @@ app.post("/", function (req, res) {
 
       //for every report,
       const weatherDataList = reports.map(item => {
-        //get dt (date timestamp) from API 
+        //get dt (date timestamp) from API
         const dateTime = new Date(item.dt * 1000)
         //get the current date
         //getDate() is a method on built in Date() JS object. Converts 10/09/20 to just '10'
         const day = dateTime.getDate()
-        
+
         //At this point, the code looks like this (if we previously got 10):
         /*
         .
