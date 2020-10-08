@@ -3,56 +3,97 @@
   body{
     margin: 0;
     margin-top: 0;
-    background-color: #c7dcff;
+    box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
+    background-color: #496DA0;
   }
-  .container{
-    /* width of 80 stops it getting stuck at the side of the page */
-    width: 85%;
-    margin: 0 auto;
-  }
-  header{
-    background-color: #ffffff;
-  }
-  /* clear-fix */
+  /* clear-fix
   header::after{
     content: '';
     display: table;
     clear: both;
-  }
-  nav {
-    float: right;
-  }
-  /* select list inside navbar */
-  nav ul {
-    /* takes space off the top */
-    margin: 0;
-    padding: 0;
-    /* removes bullet points from list items */
-    list-style: none;
-  }
-  /* move list items so their next to eachother instead of on top */
-  nav li {
-    display: inline-block;
-    margin-left: 70px;
-    padding-top: 18px;
-  }
+  } */
   /* logo */
-  .fa-cloud-rain {
+  /* .fa-cloud-rain {
     float: left;
     padding: 10px 0;
     font-size: 35px; 
     color:#c2c2c2;
-  }
-  /* make links look better */
-  nav a {
-    color: #444;
-    text-decoration: none;
-    /* text-transform: lowercase; */
-  }
-  nav a:hover {
-    color: #000;
-  }
+  } */
   /* Make whoel screen responsive */
-  
+  nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: white;
+  }
+  /* WEATHER TITLE */
+  .container {
+    letter-spacing: 3px;
+    font-size: 15px;
+  }
+  /* NAVIGTION LINKS */
+  .nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    font-size: 10px;
+  }
+  /* GET RID OF BULLET POINTS */
+  .nav-links li{
+    list-style: none;
+  }
+  /* A TAGS IN NAV LINKS */
+  .nav-links a {
+    color: black;
+    /* gets rid of text underline */
+    text-decoration: none;
+    letter-spacing: 0.9px;
+    font-weight: bold;
+    font-size: 10px;
+  }
+  /* STYLE BURGER */
+  .burger div{
+    width: 25px;
+    height: 2px;
+    background-color: #9c9a9a;
+    margin: 3px;
+  }
+  .burger{
+    display: none;
+    cursor: pointer;
+  }
+  /* MAKE NAVBAR RESPONSIVE */
+  @media screen and (max-width:1024px){
+    .nav-links{
+      width: 40%;
+    }
+  }
+  /* CREATE SIDE NAVBAR */
+  @media screen and (max-width:550px){
+    body{
+      overflow-x: hidden;
+    }
+    .nav-links a{
+      position: absolute;
+      right: 0px;
+      height: 92vh;
+      top: 7vh;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 35%;
+      transform: translateX(100%);
+    }
+    /* FADE IN AND OUT OF BURGER */
+    .nav-links li{
+      opacity: 0;
+    }
+    /* PLACE BURGER INLINE  WITH HEADER */
+    .burger{
+      display: block ;
+    }
+  }
