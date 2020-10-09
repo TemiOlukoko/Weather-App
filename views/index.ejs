@@ -1,63 +1,64 @@
 <!-- HOMEPAGE TEMPLATE -->
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Weather app</title>
-        <link href="css/style.css" rel="stylesheet" type="text/css">
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-        
-    </head>
-    <body>
 
-<!-- NAVBAR IN HEADER -->
-    <header>
-        <!-- Using continer to hold nav bar -->
-        <nav>
-            <div class="container">
-                <h4>WEATHER</h4>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#">YOUR ACCOUNT</a></li>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">SIGN UP</a></li>
-                <li><a href="#">LOGIN</a></li>
-                <li><a href="#">LOGOUT</a></li>
-            </ul>
-            <!-- CREATE MOBILE VIEW OF NAV BAR BY CREATING BURGER CLASS -->
-            <div class="burger">
-                <div class="line 1"></div>
-                <div class="line 2"></div>
-                <div class="line 3"></div>
-            </div>
-        </nav>
-    </header>
+<head>
+    <title>Weather app</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-<!-- SEARCHBAR -->
-        <div class="search">
-            <form action="/" method="POST">
-                <!-- Create search bar with text already in it -->
-                <input name="city" type="text" placeholder="Enter a City" required>
-                <button><i class="forecastButton"></i>Weather</button>
-            </form>
-            
-        <% if(forecast !== null){ %> <!-- if user enters valid weather lcoation -->
-            <p><%= forecast %></p>
+</head>
+
+<body>
+
+    <!-- NAVBAR IN HEADER -->
+
+    <!-- Using continer to hold nav bar -->
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">WEATHER</label>
+        <ul>
+            <li><a class="active" href="#">YOUR ACCOUNT</a></li>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">SIGN UP</a></li>
+            <li><a href="#">LOGIN</a></li>
+            <li><a href="#">LOGOUT</a></li>
+        </ul>
+    </nav>
+
+    <section></section>
+    <!-- SEARCHBAR -->
+    <div class="search">
+        <form action="/" method="POST">
+            <!-- Create search bar with text already in it -->
+            <input name="city" type="text" placeholder="Enter a City" required>
+            <button><i class="forecastButton"></i>Weather</button>
+        </form>
+
+        <% if(forecast !== null){ %>
+        <!-- if user enters valid weather lcoation -->
+        <p><%= forecast %></p>
         <% } %>
 
-        <% if(error !== null){ %> <!-- if error isn't equal to nothing (if there's an error) -->
-            <p><%= error %></p>
+        <% if(error !== null){ %>
+        <!-- if error isn't equal to nothing (if there's an error) -->
+        <p><%= error %></p>
         <% } %>
-            
-        </div>
-        <div id="app1"></div>
-        <div class="search">
-            <form action="/weather">
-                <!-- Create forecast button to automatically take user to weather page -->
-                <!-- <button><i class="forecastButton"></i>Weather</button> -->
-            </form>
-        </div>
-        <!-- <script src="./weather.html"></script> -->
-    </body>
-</html>  
+
+    </div>
+    <div id="app1"></div>
+    <div class="search">
+        <form action="/weather">
+            <!-- Create forecast button to automatically take user to weather page -->
+            <!-- <button><i class="forecastButton"></i>Weather</button> -->
+        </form>
+    </div>
+
+</body>
+
+</html>

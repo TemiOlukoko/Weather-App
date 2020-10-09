@@ -1,5 +1,10 @@
-
-
+  *{
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
   body{
     margin: 0;
     margin-top: 0;
@@ -8,92 +13,92 @@
     font-weight: 300;
     background-color: #496DA0;
   }
-  /* clear-fix
-  header::after{
-    content: '';
-    display: table;
-    clear: both;
-  } */
-  /* logo */
-  /* .fa-cloud-rain {
-    float: left;
-    padding: 10px 0;
-    font-size: 35px; 
-    color:#c2c2c2;
-  } */
-  /* Make whoel screen responsive */
-  nav{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 8vh;
-    background-color: white;
+ nav{
+   background-color: white;
+   height: 70px;
+   width: 100%;
+ }
+ /* weather title */
+ label.logo{
+   color: black;
+   font-size: 18px;
+   line-height: 70px;
+   /* controls how far along 'weather title' is */
+   padding: 0 80px;
+   font-weight: bold;
+ }
+ nav ul{
+   float: right;
+   margin-right: 20px;
+ }
+ nav ul li{
+   display: inline-block;
+   /* controls how far up/down the text is on the navbar */
+   line-height: 70px;
+   margin: 0 30px;
+ }
+ nav ul li a{
+   color: black;
+   font-size: 12px;
+ }
+ a.active, a:hover{
+   color: grey;
+   transition: 0.5s;
+ }
+ .checkbtn{
+   font-size: 30px;
+   color: black;
+   float: right;
+   line-height: 80px;
+   margin-right: 40px;
+   cursor: pointer;
+   display: none;
+ }
+ #check{
+   display: none;
+
+ }
+/* make navbar responsive */
+@media (max-width: 952px ){
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
   }
-  /* WEATHER TITLE */
-  .container {
-    letter-spacing: 3px;
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+@media (max-width: 858px ){
+  /* display hamburger icon again one screen reaches minimum width */
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: 0.5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px;
+    line-height: 30px;
+  }
+  nav ul li a{
     font-size: 15px;
   }
-  /* NAVIGTION LINKS */
-  .nav-links{
-    display: flex;
-    justify-content: space-around;
-    width: 50%;
-    font-size: 10px;
+  a:hover,a.active{
+    background: none;
+    color: whitesmoke;
+
   }
-  /* GET RID OF BULLET POINTS */
-  .nav-links li{
-    list-style: none;
+  #check:checked ~ ul{
+    left: 0;
   }
-  /* A TAGS IN NAV LINKS */
-  .nav-links a {
-    color: black;
-    /* gets rid of text underline */
-    text-decoration: none;
-    letter-spacing: 0.9px;
-    font-weight: bold;
-    font-size: 10px;
-  }
-  /* STYLE BURGER */
-  .burger div{
-    width: 25px;
-    height: 2px;
-    background-color: #9c9a9a;
-    margin: 3px;
-  }
-  .burger{
-    display: none;
-    cursor: pointer;
-  }
-  /* MAKE NAVBAR RESPONSIVE */
-  @media screen and (max-width:1024px){
-    .nav-links{
-      width: 40%;
-    }
-  }
-  /* CREATE SIDE NAVBAR */
-  @media screen and (max-width:550px){
-    body{
-      overflow-x: hidden;
-    }
-    .nav-links a{
-      position: absolute;
-      right: 0px;
-      height: 92vh;
-      top: 7vh;
-      background-color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 35%;
-      transform: translateX(100%);
-    }
-    /* FADE IN AND OUT OF BURGER */
-    .nav-links li{
-      opacity: 0;
-    }
-    /* PLACE BURGER INLINE  WITH HEADER */
-    .burger{
-      display: block ;
-    }
-  }
+}
+section{
+  background: url();
+}
