@@ -12,6 +12,7 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     background-color: #496DA0;
+    background-image: url(https://images.unsplash.com/photo-1511438463149-1d696b9baba7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
   }
  nav{
    background-color: white;
@@ -99,6 +100,44 @@
     left: 0;
   }
 }
+/* INPUT BACKGROUND IMAGE */
 section{
   background: url();
 }
+/* BOX SUAROUNDING SEARCH BAR */
+.form-box{
+  background-color: #b3ccff;
+  height: 40px;
+  padding-top: 4px;
+  padding-left: 7px;
+}
+/* STYLE SEARCH FIELD INSIDE SEARCH BOX */
+.search-field{
+  height: 5vh;
+  width: 80%;
+  font-family: 'Montserrat', sans-serif;
+  padding-left: 5px;
+  border-width: 0ch;
+  margin-bottom: 20px;
+  /* padding-top: 10px; */
+  /* padding-bottom: 50px; */
+}
+/* STYLE MAGNIFYING GLASS ICON */
+.fa-search{
+  color: black;
+  /* width: 100px; */
+  border-radius: 5%;
+  /* height: 40px; */
+}
+.button{
+  border-color: pink;
+  background-color: #4CAF50; /* Green */
+  border-width: 20ch;
+  height: 100px;
+}
+.btn-style{
+  /* border-width: 20ch; */
+  background-color: #b3ccff;
+  border-width: 0ch;
+}
+/* STYLE BACKGROUND */
