@@ -16,21 +16,29 @@
   }
  nav{
    background-color: white;
-   height: 70px;
+   height: 68px;
    width: 100%;
  }
- /* weather title */
+ /* STYLING WEATHER TITLE */
  label.logo{
    color: black;
    font-size: 18px;
-   line-height: 70px;
+   line-height: 30px;
    /* controls how far along 'weather title' is */
-   padding: 0 80px;
-   font-weight: bold;
+   font-weight: 1000;
+   margin-right: 15px;
  }
+ /* STYLING WEATHER ICON */
+ .fa-cloud-sun{
+  color: #bfbfbf;
+  float: left;
+  margin-left: 180px;
+  margin-top: 10px;
+ }
+/* STYLING YOUR ACCOUNT, HOME, SIGN UP, LOGIN LINKS */
  nav ul{
    float: right;
-   margin-right: 20px;
+   margin-right: 120px;
  }
  nav ul li{
    display: inline-block;
@@ -60,7 +68,7 @@
 
  }
 /* make navbar responsive */
-@media (max-width: 952px ){
+@media (max-width: 900px ){
   label.logo{
     font-size: 30px;
     padding-left: 50px;
@@ -69,10 +77,17 @@
     font-size: 16px;
   }
 }
-@media (max-width: 858px ){
-  /* display hamburger icon again one screen reaches minimum width */
+/* STYLING WHEN PAGE GETS SMALLER */
+@media (max-width: 700px ){
   .checkbtn{
     display: block;
+  }
+  /* weather title */
+  label.logo{
+    display: none;
+  }
+  .search-field{
+    margin-left: -10px;
   }
   ul{
     position: fixed;
@@ -104,23 +119,21 @@
 section{
   background: url();
 }
-/* BOX SUAROUNDING SEARCH BAR */
+/* SEARCH BAR BOX*/
 .form-box{
   background-color: #b3ccff;
   height: 40px;
-  padding-top: 4px;
-  padding-left: 7px;
+  padding-top: 0px;
+  padding-left: 180px;
 }
 /* STYLE SEARCH FIELD INSIDE SEARCH BOX */
 .search-field{
   height: 5vh;
-  width: 80%;
+  width: 69%;
   font-family: 'Montserrat', sans-serif;
-  padding-left: 5px;
+  padding-left: 9px;
   border-width: 0ch;
   margin-bottom: 20px;
-  /* padding-top: 10px; */
-  /* padding-bottom: 50px; */
 }
 /* STYLE MAGNIFYING GLASS ICON */
 .fa-search{
