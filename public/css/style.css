@@ -48,7 +48,7 @@
  }
  nav ul li a{
    color: black;
-   font-size: 12px;
+   font-size: 11px;
  }
  a.active, a:hover{
    color: grey;
@@ -78,7 +78,7 @@
   }
 }
 /* STYLING WHEN PAGE GETS SMALLER */
-@media (max-width: 700px ){
+@media (max-width: 750px ){
   .checkbtn{
     display: block;
   }
@@ -86,8 +86,12 @@
   label.logo{
     display: none;
   }
+  /* search icon */
+  .fa-search{
+    display: none;
+  }
   .search-field{
-    margin-left: -10px;
+    display: none;
   }
   ul{
     position: fixed;
@@ -97,6 +101,10 @@
     left: -100%;
     text-align: center;
     transition: 0.5s;
+    background-color: #b3ccff;
+    /* margin-top: 10px; */
+    padding-top: 10px;
+
   }
   nav ul li{
     display: block;
@@ -124,7 +132,7 @@ section{
   background-color: #b3ccff;
   height: 40px;
   padding-top: 0px;
-  padding-left: 180px;
+  padding-left: 200px;
 }
 /* STYLE SEARCH FIELD INSIDE SEARCH BOX */
 .search-field{
@@ -153,4 +161,16 @@ section{
   background-color: #b3ccff;
   border-width: 0ch;
 }
-/* STYLE BACKGROUND */
+/* STYLE TABLE */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid black;
+  width: 40%;
+}
+th {
+  height: 50px;
+}

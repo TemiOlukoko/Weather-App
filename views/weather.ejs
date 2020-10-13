@@ -19,6 +19,14 @@
     <div>
         <h1>Welcome to the Weather page!</h1>
     </div>
+    <table>
+        <tr>
+            <th>Temp</th>
+            <th>Humidity</th>
+            <th>Date</th>
+        </tr>
+    </table>
+
     <div>
         <!-- Object.key gets all keys (object in array) in object -->
         <!-- for each key, list it temporaarily as a key -->
@@ -27,21 +35,17 @@
         <% weatherData[0][key].forEach(day => { %>
         <table>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td> <%= day.main.temp %></td>
-                <td> <%= day.main.humidity %></td>
-                <td> <%= day.dt_txt %></td>
+                <!-- <td> -->
+                    <td><%= day.main.temp %></td>
+                    <td><%= day.main.humidity %></td>
+                    <td><%= day.dt_txt %></td>
+                <!-- </td> -->
             </tr>
         </table>
         <!-- <p>Feels like: <%= day.main.feels_like %></p> -->
         <% })%>
         <% }) %>
     </div>
-
 
     <div class="search">
         <form action="/">
