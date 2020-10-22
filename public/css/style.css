@@ -11,16 +11,22 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    background-color: #496DA0;
-    background-image: url(https://images.unsplash.com/photo-1511438463149-1d696b9baba7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+    /* background-color: #496DA0; */
+    /* background-image: url(https://images.unsplash.com/photo-1511438463149-1d696b9baba7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80); */
   }
+  /* INPUT BACKGROUND IMAGE */
+ .index-page{
+   /* background-color: pink; */
+   height: 500px;
+   background-image: url(https://images.unsplash.com/photo-1511438463149-1d696b9baba7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+ }
  nav{
    background-color: white;
    height: 68px;
    width: 100%;
  }
  /* STYLING WEATHER TITLE */
- label.logo{
+ a.logo{
    color: black;
    font-size: 18px;
    line-height: 30px;
@@ -123,10 +129,6 @@
     left: 0;
   }
 }
-/* INPUT BACKGROUND IMAGE */
-section{
-  background: url();
-}
 /* SEARCH BAR BOX*/
 .form-box{
   background-color: #b3ccff;
@@ -161,16 +163,35 @@ section{
   background-color: #b3ccff;
   border-width: 0ch;
 }
+/* STYLING WEATHER EJS PAGE */
+.welcome-message{
+  margin-left: 380px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
 /* STYLE TABLE */
 table {
   border-collapse: collapse;
+  /* align-items: center; */
+  /* align-self: center; */
+  /* align-content: center; */
+  margin-left: 300px;
   width: 100%;
 }
-
 table, th, td {
   border: 1px solid black;
   width: 40%;
 }
 th {
   height: 50px;
+  background-color: #4CAF50;
+  color: white;
+}
+td{
+  background-color: white;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+/* BACKGROUND COLOUR OF WEATHER PAGE */
+.weather-page{
+  background-color: #ccc;
 }

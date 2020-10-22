@@ -9,21 +9,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
+    <!-- BEGINING OF NEW CODE -->
+    <!-- refactoring - this is new code -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <!-- <script>
+        $(function () {
+            $("navbar").load("components/navbar.html");
+        });
+    </script> -->
+    
+    <!-- END OF  NEW CODE -->
 </head>
 
+
 <body>
+    <!-- NEW CODE -->
+    <!-- <div id="header"></div> -->
 
     <!-- NAVBAR IN HEADER -->
-
-    <!-- Using continer to hold nav bar -->
     <nav>
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
-        <!-- <i class='fas fa-cloud-showers-heavy' style='font-size:43px'></i> -->
-        <!-- <i class='fas fa-sun' style='font-size:40px'></i> -->
         <i class='fas fa-cloud-sun' style='font-size:40px'></i>
         <ul>
             <li><a class="active" href="#">YOUR ACCOUNT</a></li>
@@ -31,30 +40,30 @@
             <li><a href="#">SIGN UP</a></li>
             <li><a href="#">LOGIN</a></li>
             <li><a href="#">LOGOUT</a></li>
-            <!-- <li><a class="search-tag" href="#">SEARCH</a></li> -->
         </ul>
     </nav>
 
-    <section></section>
     <!-- SEARCHBAR -->
     <div class="header">
         <div class="search">
             <form action="/" method="POST">
                 <!-- Create search bar with text already in it -->
-                <!-- <input name="city" type="text" placeholder="Enter any worlwide town or city" required>
-            <button><i class="forecastButton"></i>Weather</button> -->
                 <form>
                     <div class="form-box">
-                        <label class="logo">WEATHER</label>
+                        <a class = "logo" href="/">WEATHER</a>
                         <input type="text" class="search-field" name="city"
                             placeholder="Enter any worlwide town or city" required>
-                            <button class="btn-style"><i class="fas fa-search"></i></button>
+                        <button class="btn-style"><i class="fas fa-search"></i></button>
                     </div>
                 </form>
             </form>
         </div>
     </div>
 
+    <div class="index-page">
+        <h3>This is the body. Keep here for debugging purposes</h3>
+    </div>
+    <div></div>
     <% if(forecast !== null){ %>
     <!-- if user enters valid weather lcoation -->
     <p><%= forecast %></p>
@@ -65,14 +74,14 @@
     <p><%= error %></p>
     <% } %>
 
-
     <div id="app1"></div>
     <div class="search">
         <form action="/weather">
-            <!-- Create forecast button to automatically take user to weather page -->
-            <!-- <button><i class="forecastButton"></i>Weather</button> -->
         </form>
     </div>
+
+    <!-- NEW CODE -->
+    <!-- <div id="footer"></div> -->
 
 </body>
 

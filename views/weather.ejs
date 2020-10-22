@@ -6,9 +6,12 @@
     <title>Weather app</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
 </head>
 
-<body>
+<body class="weather-page">
     <div class="search">
         <form action="/" method="POST">
             <!-- <input type="submit" value="Get Weather"> -->
@@ -16,12 +19,47 @@
         </form>
         <!-- <h3>Use the search bar to view the weather of any worldwide location</h3> -->
     </div>
-    <div>
-        <h1>Welcome to the Weather page!</h1>
+    <!-- NAVBAR -->
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <i class='fas fa-cloud-sun' style='font-size:40px'></i>
+        <ul>
+            <li><a class="active" href="#">YOUR ACCOUNT</a></li>
+            <li><a href="/">HOME</a></li>
+            <li><a href="#">SIGN UP</a></li>
+            <li><a href="#">LOGIN</a></li>
+            <li><a href="#">LOGOUT</a></li>
+        </ul>
+    </nav>
+    <!-- SEARCHBAR -->
+    <div class="header">
+        <div class="search">
+            <form action="/" method="POST">
+                <!-- Create search bar with text already in it -->
+                <form>
+                    <div class="form-box">
+                        <!-- <label class="logo">WEATHER</label> -->
+                        <a class = "logo" href="/">WEATHER</a>
+                        <input type="text" class="search-field" name="city"
+                            placeholder="Enter any worlwide town or city" required>
+                        <button class="btn-style"><i class="fas fa-search"></i></button>
+                    </div>
+                </form>
+            </form>
+        </div>
     </div>
+
+    <!-- <div class="welcome-message">
+        <h1>Weather page</h1>
+    </div> -->
+    <header>Test codeeeeeeee</header>
+    
     <table>
         <tr>
-            <th>Temp</th>
+            <th>Temperature</th>
             <th>Humidity</th>
             <th>Date</th>
         </tr>
@@ -36,9 +74,9 @@
         <table>
             <tr>
                 <!-- <td> -->
-                    <td><%= day.main.temp %></td>
-                    <td><%= day.main.humidity %></td>
-                    <td><%= day.dt_txt %></td>
+                <td><%= day.main.temp %></td>
+                <td><%= day.main.humidity %></td>
+                <td><%= day.dt_txt %></td>
                 <!-- </td> -->
             </tr>
         </table>
@@ -53,6 +91,7 @@
             <!-- <button><i class="forecastButton"></i>Home</button> -->
         </form>
     </div>
+    <footer>TESTTTTTTTT</footer>
 </body>
 
 </html>
