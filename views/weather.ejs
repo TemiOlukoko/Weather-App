@@ -20,69 +20,45 @@
         <!-- <h3>Use the search bar to view the weather of any worldwide location</h3> -->
     </div>
     <!-- NAVBAR -->
-    <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <i class="fas fa-bars"></i>
-        </label>
-        <i class='fas fa-cloud-sun' style='font-size:40px'></i>
-        <ul>
-            <li><a class="active" href="#">YOUR ACCOUNT</a></li>
-            <li><a href="/">HOME</a></li>
-            <li><a href="#">SIGN UP</a></li>
-            <li><a href="#">LOGIN</a></li>
-            <li><a href="#">LOGOUT</a></li>
-        </ul>
-    </nav>
-    <!-- SEARCHBAR -->
-    <div class="header">
-        <div class="search">
-            <form action="/" method="POST">
-                <!-- Create search bar with text already in it -->
-                <form>
-                    <div class="form-box">
-                        <!-- <label class="logo">WEATHER</label> -->
-                        <a class = "logo" href="/">WEATHER</a>
-                        <input type="text" class="search-field" name="city"
-                            placeholder="Enter any worlwide town or city" required>
-                        <button class="btn-style"><i class="fas fa-search"></i></button>
-                    </div>
-                </form>
-            </form>
-        </div>
-    </div>
+    <!-- LOAD NAVBAR EJS PAGE FROM NAVBAR FILE HERE -->
+    <%- include('../components/navbar') %>
 
-    <!-- <div class="welcome-message">
-        <h1>Weather page</h1>
-    </div> -->
-    <header>Test codeeeeeeee</header>
-    
-    <table>
-        <tr>
-            <th>Temperature</th>
-            <th>Humidity</th>
-            <th>Date</th>
-        </tr>
-    </table>
-
+    <!-- <header class="header-weather">A forecast for X</header>
+    <header></header> -->
     <div>
-        <!-- Object.key gets all keys (object in array) in object -->
-        <!-- for each key, list it temporaarily as a key -->
-        <% Object.keys(weatherData[0]).forEach(key => { %>
-        <!-- for each object in array, call it day -->
-        <% weatherData[0][key].forEach(day => { %>
         <table>
-            <tr>
-                <!-- <td> -->
-                <td><%= day.main.temp %></td>
-                <td><%= day.main.humidity %></td>
-                <td><%= day.dt_txt %></td>
-                <!-- </td> -->
-            </tr>
+            <thead>
+                <tr>
+                    <th>Datetime</th>
+                    <th>Temperature (°C)</th>
+                    <th>Feels Like</th>
+                    <th>Humidity</th>
+                    <th>Pressure (atm)</th>
+                </tr>
+            </thead>
+            <!-- </table> -->
+
+            <!-- <div> -->
+            <!-- Object.key gets all keys (object in array) in object -->
+            <!-- for each key, list it temporaarily as a key -->
+            <% Object.keys(weatherData[0]).forEach(key => { %>
+            <!-- for each object in array, call it day -->
+            <% weatherData[0][key].forEach(day => { %>
+            <!-- <table> -->
+            <tbody>
+                <tr>
+                    <td><%= day.dt_txt %></td>
+                    <td><%= day.main.temp %> </td>
+                    <td><%= day.main.feels_like %></td>
+                    <td><%= day.main.humidity %></td>
+                    <td><%= day.main.pressure %></td>
+                </tr>
+
+                <% })%>
+
+                <% }) %>
+            </tbody>
         </table>
-        <!-- <p>Feels like: <%= day.main.feels_like %></p> -->
-        <% })%>
-        <% }) %>
     </div>
 
     <div class="search">
@@ -91,7 +67,7 @@
             <!-- <button><i class="forecastButton"></i>Home</button> -->
         </form>
     </div>
-    <footer>TESTTTTTTTT</footer>
+    <!-- <footer>TESTTTTTTTT</footer> -->
 </body>
 
 </html>

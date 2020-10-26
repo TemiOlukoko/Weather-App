@@ -17,7 +17,7 @@
   /* INPUT BACKGROUND IMAGE */
  .index-page{
    /* background-color: pink; */
-   height: 500px;
+   height: 600px;
    background-image: url(https://images.unsplash.com/photo-1511438463149-1d696b9baba7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
  }
  nav{
@@ -170,11 +170,8 @@
   padding-bottom: 15px;
 }
 /* STYLE TABLE */
-table {
+/* table {
   border-collapse: collapse;
-  /* align-items: center; */
-  /* align-self: center; */
-  /* align-content: center; */
   margin-left: 300px;
   width: 100%;
 }
@@ -190,8 +187,56 @@ th {
 td{
   background-color: white;
 }
-tr:nth-child(even) {background-color: #f2f2f2;}
+tr:nth-child(even) {background-color: #f2f2f2;} */
+
+/* NEW CODE FOR TABLE */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+th,
+td {
+  padding: 15px;
+  background-color: rgba(255,255,255,0.2);
+  color: #fff;
+}
+th {
+  text-align: left;
+}
+thead th {
+  background-color: #55608f;
+}
+tbody tr:hover {
+    background-color: rgba(255,255,255,0.3);
+}
+tbody td {
+position: relative;
+}
+tbody td:hover::before {
+content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  bottom: -9999px;
+  background-color: rgba(255,255,255,0.2);
+  z-index: -1;
+}
+
+
 /* BACKGROUND COLOUR OF WEATHER PAGE */
 .weather-page{
-  background-color: #ccc;
+  /* background-color: #ccc; */
+  background: linear-gradient(to right bottom, #49a09d, #5f2c82);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.header-weather{
+  font-size: 18px;
+  margin-top: 10px;
+  margin-left: 450px;
+  margin-bottom: 5px;
 }
