@@ -1,242 +1,290 @@
-  *{
-    padding: 0px;
-    margin: 0px;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
-  }
-  body{
-    margin: 0;
-    margin-top: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    /* background-color: #496DA0; */
-    /* background-image: url(https://images.unsplash.com/photo-1511438463149-1d696b9baba7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80); */
-  }
-  /* INPUT BACKGROUND IMAGE */
- .index-page{
-   /* background-color: pink; */
-   height: 600px;
-   background-image: url(https://images.unsplash.com/photo-1511438463149-1d696b9baba7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
- }
- nav{
-   background-color: white;
-   height: 68px;
-   width: 100%;
- }
- /* STYLING WEATHER TITLE */
- a.logo{
-   color: black;
-   font-size: 18px;
-   line-height: 30px;
-   /* controls how far along 'weather title' is */
-   font-weight: 1000;
-   margin-right: 15px;
- }
- /* STYLING WEATHER ICON */
- .fa-cloud-sun{
-  color: #bfbfbf;
-  float: left;
-  margin-left: 180px;
-  margin-top: 10px;
- }
+*{
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  margin-top: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  /* background-color: #496DA0; */
+  /* background-image: url(https://images.unsplash.com/photo-1511438463149-1d696b9baba7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80); */
+}
+/* INPUT BACKGROUND IMAGE */
+.index-page{
+ /* background-color: pink; */
+ height: 600px;
+ /* background-image: url(https://images.unsplash.com/photo-1511438463149-1d696b9baba7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80); */
+}
+nav{
+ background-color: white;
+ height: 68px;
+ width: 100%;
+}
+/* STYLING WEATHER TITLE */
+a.logo{
+ color: black;
+ font-size: 18px;
+ line-height: 30px;
+ /* controls how far along 'weather title' is */
+ font-weight: 1000;
+ margin-right: 15px;
+}
+/* STYLING WEATHER ICON */
+.fa-cloud-sun{
+color: #bfbfbf;
+float: left;
+margin-left: 180px;
+margin-top: 10px;
+}
 /* STYLING YOUR ACCOUNT, HOME, SIGN UP, LOGIN LINKS */
- nav ul{
-   float: right;
-   margin-right: 120px;
- }
- nav ul li{
-   display: inline-block;
-   /* controls how far up/down the text is on the navbar */
-   line-height: 70px;
-   margin: 0 30px;
- }
- nav ul li a{
-   color: black;
-   font-size: 11px;
- }
- a.active, a:hover{
-   color: grey;
-   transition: 0.5s;
- }
- .checkbtn{
-   font-size: 30px;
-   color: black;
-   float: right;
-   line-height: 80px;
-   margin-right: 40px;
-   cursor: pointer;
-   display: none;
- }
- #check{
-   display: none;
+nav ul{
+ float: right;
+ margin-right: 120px;
+}
+nav ul li{
+ display: inline-block;
+ /* controls how far up/down the text is on the navbar */
+ line-height: 70px;
+ margin: 0 30px;
+}
+nav ul li a{
+ color: black;
+ font-size: 11px;
+}
+a.active, a:hover{
+ color: grey;
+ transition: 0.5s;
+}
+.checkbtn{
+ font-size: 30px;
+ color: black;
+ float: right;
+ line-height: 80px;
+ margin-right: 40px;
+ cursor: pointer;
+ display: none;
+}
+#check{
+ display: none;
 
- }
+}
 /* make navbar responsive */
 @media (max-width: 900px ){
-  label.logo{
-    font-size: 30px;
-    padding-left: 50px;
-  }
-  nav ul li a{
-    font-size: 16px;
-  }
+label.logo{
+  font-size: 30px;
+  padding-left: 50px;
+}
+nav ul li a{
+  font-size: 16px;
+}
 }
 /* STYLING WHEN PAGE GETS SMALLER */
 @media (max-width: 750px ){
-  .checkbtn{
-    display: block;
-  }
-  /* weather title */
-  label.logo{
-    display: none;
-  }
-  /* search icon */
-  .fa-search{
-    display: none;
-  }
-  .search-field{
-    display: none;
-  }
-  ul{
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    top: 80px;
-    left: -100%;
-    text-align: center;
-    transition: 0.5s;
-    background-color: #b3ccff;
-    /* margin-top: 10px; */
-    padding-top: 10px;
+.checkbtn{
+  display: block;
+}
+/* weather title */
+label.logo{
+  display: none;
+}
+/* search icon */
+.fa-search{
+  display: none;
+}
+.search-field{
+  display: none;
+}
+ul{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 80px;
+  left: -100%;
+  text-align: center;
+  transition: 0.5s;
+  background-color: #b3ccff;
+  /* margin-top: 10px; */
+  padding-top: 10px;
 
-  }
-  nav ul li{
-    display: block;
-    margin: 50px;
-    line-height: 30px;
-  }
-  nav ul li a{
-    font-size: 15px;
-  }
-  a:hover,a.active{
-    background: none;
-    color: whitesmoke;
+}
+nav ul li{
+  display: block;
+  margin: 50px;
+  line-height: 30px;
+}
+nav ul li a{
+  font-size: 15px;
+}
+a:hover,a.active{
+  background: none;
+  color: whitesmoke;
 
-  }
-  #check:checked ~ ul{
-    left: 0;
-  }
+}
+#check:checked ~ ul{
+  left: 0;
+}
 }
 /* SEARCH BAR BOX*/
 .form-box{
-  background-color: #b3ccff;
-  height: 40px;
-  padding-top: 0px;
-  padding-left: 200px;
+background-color: #b3ccff;
+height: 40px;
+padding-top: 0px;
+padding-left: 200px;
 }
 /* STYLE SEARCH FIELD INSIDE SEARCH BOX */
 .search-field{
-  height: 5vh;
-  width: 69%;
-  font-family: 'Montserrat', sans-serif;
-  padding-left: 9px;
-  border-width: 0ch;
-  margin-bottom: 20px;
+height: 5vh;
+width: 69%;
+font-family: 'Montserrat', sans-serif;
+padding-left: 9px;
+border-width: 0ch;
+margin-bottom: 20px;
 }
 /* STYLE MAGNIFYING GLASS ICON */
 .fa-search{
-  color: black;
-  /* width: 100px; */
-  border-radius: 5%;
-  /* height: 40px; */
+color: black;
+/* width: 100px; */
+border-radius: 5%;
+/* height: 40px; */
 }
 .button{
-  border-color: pink;
-  background-color: #4CAF50; /* Green */
-  border-width: 20ch;
-  height: 100px;
+border-color: pink;
+background-color: #4CAF50; /* Green */
+border-width: 20ch;
+height: 100px;
 }
 .btn-style{
-  /* border-width: 20ch; */
-  background-color: #b3ccff;
-  border-width: 0ch;
+/* border-width: 20ch; */
+background-color: #b3ccff;
+border-width: 0ch;
 }
 /* STYLING WEATHER EJS PAGE */
 .welcome-message{
-  margin-left: 380px;
-  padding-top: 10px;
-  padding-bottom: 15px;
+margin-left: 380px;
+padding-top: 10px;
+padding-bottom: 15px;
 }
 /* STYLE TABLE */
 /* table {
-  border-collapse: collapse;
-  margin-left: 300px;
-  width: 100%;
+border-collapse: collapse;
+margin-left: 300px;
+width: 100%;
 }
 table, th, td {
-  border: 1px solid black;
-  width: 40%;
+border: 1px solid black;
+width: 40%;
 }
 th {
-  height: 50px;
-  background-color: #4CAF50;
-  color: white;
+height: 50px;
+background-color: #4CAF50;
+color: white;
 }
 td{
-  background-color: white;
+background-color: white;
 }
 tr:nth-child(even) {background-color: #f2f2f2;} */
 
 /* NEW CODE FOR TABLE */
 
 table {
-  width: 100%;
-  border-collapse: collapse;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+width: 100%;
+border-collapse: collapse;
+overflow: hidden;
+box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 th,
 td {
-  padding: 15px;
-  background-color: rgba(255,255,255,0.2);
-  color: #fff;
+padding: 15px;
+background-color: rgba(255,255,255,0.2);
+color: #fff;
 }
 th {
-  text-align: left;
+text-align: left;
 }
 thead th {
-  background-color: #55608f;
+background-color: #55608f;
 }
 tbody tr:hover {
-    background-color: rgba(255,255,255,0.3);
+  background-color: rgba(255,255,255,0.3);
 }
 tbody td {
 position: relative;
 }
 tbody td:hover::before {
 content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -9999px;
-  bottom: -9999px;
-  background-color: rgba(255,255,255,0.2);
-  z-index: -1;
+position: absolute;
+left: 0;
+right: 0;
+top: -9999px;
+bottom: -9999px;
+background-color: rgba(255,255,255,0.2);
+z-index: -1;
 }
 
 
 /* BACKGROUND COLOUR OF WEATHER PAGE */
 .weather-page{
-  /* background-color: #ccc; */
-  background: linear-gradient(to right bottom, #49a09d, #5f2c82);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+/* background-color: #ccc; */
+background: linear-gradient(to right bottom, #49a09d, #5f2c82);
+background-repeat: no-repeat;
+background-attachment: fixed;
 }
 .header-weather{
-  font-size: 18px;
-  margin-top: 10px;
-  margin-left: 450px;
-  margin-bottom: 5px;
+font-size: 18px;
+margin-top: 10px;
+margin-left: 450px;
+margin-bottom: 5px;
+}
+/* STYLING HOMEPAGE NEW CODE */
+.header1{
+  height: 100vh;
+  background-image: url(https://media.istockphoto.com/photos/blue-sky-picture-id527545230?b=1&k=6&m=527545230&s=612x612&w=0&h=BqnGhZQR9o0Tp1rzhBM5XHItDIdBBFLpLaE_nhksrqM=);
+  /* https://images.unsplash.com/photo-1544829728-e5cb9eedc20e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60 */
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.homepage-form-box{
+  /* background-color: #b3ccff; */
+  /* controls position of title and formbox */
+  height: 125px;
+  }
+.title{
+  color: black;
+  padding-bottom: 20px;
+  font-size: 40px;
+  line-height: 30px;
+  font-weight: 5000;
+  letter-spacing: 3px;
+  padding-left: 40px;
+}
+.actual-field{
+  height: 50px;
+}
+.test{
+  background-color: whitesmoke;
+  height: 50px;
+  width: 300px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  padding-left: 50px;
+}
+.search-btn{
+  height: 40px;
+  background-color: #bfbfbf;
+  outline: none;
+  width: 40px;
+  border: none;
+  border-radius: 25px;
+}
+.search-btn{
+  background-color: #bfbfbf;
+  cursor: pointer;
 }

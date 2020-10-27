@@ -16,11 +16,26 @@
 
 <body>
     <!-- LOAD NAVBAR EJS PAGE FROM NAVBAR FILE HERE -->
-    <%- include('../components/navbar') %>
 
-    <div class="index-page">
-        <!-- <h3>This is the body. Keep here for debugging purposes</h3> -->
+    <div class="header1">
+        <div class="search">
+            <form action="/" method="POST">
+                <form>
+                    <div class="homepage-form-box">
+                        <h1 class="title">WEATHER</h1>
+                        <!-- <i class='fas fa-cloud-sun' style='font-size:40px'></i> -->
+                        <div class="homepage-form-box">
+                            <input type="text" class="test" name="city"
+                                placeholder="Enter any worldwide town or city" required>
+                                <button class="search-btn"><i class="fas fa-search"></i></button>
+                            <!-- <button>search</button> -->
+                        </div>
+                    </div>
+                </form>
+            </form>
+        </div>
     </div>
+
     <div></div>
     <% if(forecast !== null){ %>
     <!-- if user enters valid weather lcoation -->
