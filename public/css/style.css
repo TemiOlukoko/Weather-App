@@ -28,34 +28,13 @@ nav{
 /* STYLING WEATHER TITLE */
 a.logo{
  color: black;
- font-size: 18px;
+ font-size: 22px;
  line-height: 30px;
  /* controls how far along 'weather title' is */
  font-weight: 1000;
  margin-right: 15px;
 }
-/* STYLING WEATHER ICON */
-.fa-cloud-sun{
-color: #bfbfbf;
-float: left;
-margin-left: 180px;
-margin-top: 10px;
-}
 /* STYLING YOUR ACCOUNT, HOME, SIGN UP, LOGIN LINKS */
-nav ul{
- float: right;
- margin-right: 120px;
-}
-nav ul li{
- display: inline-block;
- /* controls how far up/down the text is on the navbar */
- line-height: 70px;
- margin: 0 30px;
-}
-nav ul li a{
- color: black;
- font-size: 11px;
-}
 a.active, a:hover{
  color: grey;
  transition: 0.5s;
@@ -84,7 +63,7 @@ nav ul li a{
 }
 }
 /* STYLING WHEN PAGE GETS SMALLER */
-@media (max-width: 750px ){
+@media (max-width: 100px ){
 .checkbtn{
   display: block;
 }
@@ -131,9 +110,9 @@ a:hover,a.active{
 }
 /* SEARCH BAR BOX*/
 .form-box{
-background-color: #b3ccff;
+background-color: #b0d7ff;
 height: 40px;
-padding-top: 0px;
+padding-top: 3px;
 padding-left: 200px;
 }
 /* STYLE SEARCH FIELD INSIDE SEARCH BOX */
@@ -148,19 +127,11 @@ margin-bottom: 20px;
 /* STYLE MAGNIFYING GLASS ICON */
 .fa-search{
 color: black;
-/* width: 100px; */
 border-radius: 5%;
-/* height: 40px; */
-}
-.button{
-border-color: pink;
-background-color: #4CAF50; /* Green */
-border-width: 20ch;
-height: 100px;
 }
 .btn-style{
 /* border-width: 20ch; */
-background-color: #b3ccff;
+background-color: #b0d7ff;
 border-width: 0ch;
 }
 /* STYLING WEATHER EJS PAGE */
@@ -170,44 +141,27 @@ padding-top: 10px;
 padding-bottom: 15px;
 }
 /* STYLE TABLE */
-/* table {
-border-collapse: collapse;
-margin-left: 300px;
-width: 100%;
-}
-table, th, td {
-border: 1px solid black;
-width: 40%;
-}
-th {
-height: 50px;
-background-color: #4CAF50;
-color: white;
-}
-td{
-background-color: white;
-}
-tr:nth-child(even) {background-color: #f2f2f2;} */
-
-/* NEW CODE FOR TABLE */
-
 table {
 width: 100%;
 border-collapse: collapse;
 overflow: hidden;
 box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
+/* MAIN BODY OF TABLE */
 th,
 td {
 padding: 15px;
-background-color: rgba(255,255,255,0.2);
-color: #fff;
+/* background-color: rgba(255,255,255,0.2); */
+color: #858585;
 }
 th {
 text-align: left;
 }
+/* HEAD OF TABLE WITH DATE, TEMP ETC*/
 thead th {
-background-color: #55608f;
+background-color: #e0f0ff;
+color: #4f4f4f;
+font-size: 14px;
 }
 tbody tr:hover {
   background-color: rgba(255,255,255,0.3);
@@ -222,17 +176,17 @@ left: 0;
 right: 0;
 top: -9999px;
 bottom: -9999px;
-background-color: rgba(255,255,255,0.2);
+/* background-color: rgba(255,255,255,0.2); */
 z-index: -1;
 }
-
-
 /* BACKGROUND COLOUR OF WEATHER PAGE */
 .weather-page{
 /* background-color: #ccc; */
-background: linear-gradient(to right bottom, #49a09d, #5f2c82);
+/* background: linear-gradient(to right bottom, #49a09d, #5f2c82); */
+background-color: #f0f0f0;
 background-repeat: no-repeat;
 background-attachment: fixed;
+font-size: 13px;
 }
 .header-weather{
 font-size: 18px;
@@ -278,13 +232,13 @@ margin-bottom: 5px;
 }
 .search-btn{
   height: 40px;
-  background-color: #bfbfbf;
+  /* background-color: #bfbfbf; */
   outline: none;
   width: 40px;
   border: none;
   border-radius: 25px;
 }
 .search-btn{
-  background-color: #bfbfbf;
+  background-color: whitesmoke;
   cursor: pointer;
 }
