@@ -19,14 +19,15 @@ https://openweathermap.org/forecast5#name5
 - Node.js
 - Express
 
+# Vendor Technologies
+- FontAwesome
+
 # Third-party APIs
 - OpenWeatherMap API
 
 # App features
-
-# Trade-off decisions
+- Gets the 5 day weather forecast over 3 hour intervals for any worldwide location
+- Currently only desktop responsive 
 
 # Challenges
-- Phase 1 project issue: attempting to split the JSON reponse into 5 different arrays, where array 1 has data from day 1 etc.
-Example if the date is the 1st of September, I want array 1 (day 1) to contain data for the 1st of september, array 2 to contain data for 2nd of september etc.
-
+- Due to the format of the data provided by OpenWeatherMap's free API service for the 5 day weather forecast, I had issues splitting up the 'list' pasrt of the JSON response into an object of arrays. In order to do this, I created functions that parsed and processed the data into an accessible array of objects. Check out app.js and weather.ejs to see how I did this.
