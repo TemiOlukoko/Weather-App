@@ -30,4 +30,4 @@ https://openweathermap.org/forecast5#name5
 - Currently only desktop responsive 
 
 # Challenges
-- Due to the format of the data provided by OpenWeatherMap's free API service for the 5 day weather forecast, I had issues splitting up the 'list' pasrt of the JSON response into an object of arrays. In order to do this, I created functions that parsed and processed the data into an accessible array of objects. Check out app.js and weather.ejs to see how I did this.
+- Due to the format of the data provided by OpenWeatherMap's free API service for the 5 day weather forecast, I had issues splitting up the 'list' part of the JSON response into an object of arrays. In order to do this, I created functions that parsed and processed the data into an accessible array of objects. Check out app.js and weather.ejs to see how I did this.
