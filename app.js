@@ -1,5 +1,5 @@
 //USING THE FORECAST API
-
+const
 //Require request package
 const request = require("request"); //use http also
 //Require express framework
@@ -96,6 +96,6 @@ app.get("/weather", function (req, res) {
 });
 
 //CREATE SERVER THATS LISTENING ON PORT 3000 FOR CONNECTIONS
-app.listen(3000, function () {
+app.listen(process.env.PORT || 3000, function () {
   console.log("You are now connected to the server!!!");
 });
