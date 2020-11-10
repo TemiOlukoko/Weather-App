@@ -1,5 +1,6 @@
 # Weather Forecast APP
-//Live site link will go here
+Live Site:
+https://forecast-application-to.herokuapp.com/
 
 # Summary
 This is my weather forecast app. Thus far I have been able to make a request to the Open Weather Map API using the weather forecast API and set up index.ejs and weather.ejs to view response as HTML file.
