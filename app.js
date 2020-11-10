@@ -1,5 +1,4 @@
 //USING THE FORECAST API
-const
 //Require request package
 const request = require("request"); //use http also
 //Require express framework
