@@ -13,18 +13,13 @@
 
 <body class="weather-page">
     <div class="search">
-        <form action="/" method="POST">
-            <!-- <input type="submit" value="Get Weather"> -->
-            <!-- <input name="city" type="text" placeholder="Enter any global location" required> -->
-        </form>
-        <!-- <h3>Use the search bar to view the weather of any worldwide location</h3> -->
+        <!-- posting form to / route -->
+        <form action="/" method="POST"></form>
     </div>
     <!-- NAVBAR -->
     <!-- LOAD NAVBAR EJS PAGE FROM NAVBAR FILE HERE -->
     <%- include('../components/navbar') %>
-
-    <!-- <header class="header-weather">A forecast for X</header>
-    <header></header> -->
+  
     <div>
         <table>
             <thead>
@@ -36,9 +31,7 @@
                     <th>Pressure (atm)</th>
                 </tr>
             </thead>
-            <!-- </table> -->
-
-            <!-- <div> -->
+            
             <!-- Object.key gets all keys (object in array) in object -->
             <!-- for each key, list it temporaarily as a key -->
             <% Object.keys(weatherData[0]).forEach(key => { %>
@@ -55,19 +48,14 @@
                 </tr>
 
                 <% })%>
-
                 <% }) %>
             </tbody>
         </table>
     </div>
 
     <div class="search">
-        <form action="/">
-            <!-- Create forecast button to automatically take user to homepage -->
-            <!-- <button><i class="forecastButton"></i>Home</button> -->
-        </form>
+        <form action="/"></form>
     </div>
-    <!-- <footer>TESTTTTTTTT</footer> -->
 </body>
 
 </html>

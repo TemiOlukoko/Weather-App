@@ -11,14 +11,10 @@ body{
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
-  /* background-color: #496DA0; */
-  /* background-image: url(https://images.unsplash.com/photo-1511438463149-1d696b9baba7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80); */
 }
 /* INPUT BACKGROUND IMAGE */
 .index-page{
- /* background-color: pink; */
  height: 600px;
- /* background-image: url(https://images.unsplash.com/photo-1511438463149-1d696b9baba7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80); */
 }
 nav{
  background-color: white;
@@ -28,7 +24,7 @@ nav{
 /* STYLING WEATHER TITLE */
 a.logo{
  color: black;
- font-size: 22px;
+ font-size: 23px;
  line-height: 30px;
  /* controls how far along 'weather title' is */
  font-weight: 1000;
@@ -38,19 +34,6 @@ a.logo{
 a.active, a:hover{
  color: grey;
  transition: 0.5s;
-}
-.checkbtn{
- font-size: 30px;
- color: black;
- float: right;
- line-height: 80px;
- margin-right: 40px;
- cursor: pointer;
- display: none;
-}
-#check{
- display: none;
-
 }
 /* make navbar responsive */
 @media (max-width: 900px ){
@@ -78,41 +61,12 @@ label.logo{
 .search-field{
   display: none;
 }
-ul{
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  top: 80px;
-  left: -100%;
-  text-align: center;
-  transition: 0.5s;
-  background-color: #b3ccff;
-  /* margin-top: 10px; */
-  padding-top: 10px;
-
-}
-nav ul li{
-  display: block;
-  margin: 50px;
-  line-height: 30px;
-}
-nav ul li a{
-  font-size: 15px;
-}
-a:hover,a.active{
-  background: none;
-  color: whitesmoke;
-
-}
-#check:checked ~ ul{
-  left: 0;
-}
 }
 /* SEARCH BAR BOX*/
 .form-box{
 background-color: #b0d7ff;
-height: 40px;
-padding-top: 3px;
+height: 55px;
+padding-top: 8px;
 padding-left: 200px;
 }
 /* STYLE SEARCH FIELD INSIDE SEARCH BOX */
@@ -151,8 +105,7 @@ box-shadow: 0 0 20px rgba(0,0,0,0.1);
 th,
 td {
 padding: 15px;
-/* background-color: rgba(255,255,255,0.2); */
-color: #858585;
+color: #5e5e5e;
 }
 th {
 text-align: left;
@@ -160,8 +113,10 @@ text-align: left;
 /* HEAD OF TABLE WITH DATE, TEMP ETC*/
 thead th {
 background-color: #e0f0ff;
-color: #4f4f4f;
+color: #5e5e5e;
 font-size: 14px;
+font-weight: bold;
+height: 50px;
 }
 tbody tr:hover {
   background-color: rgba(255,255,255,0.3);
@@ -176,13 +131,10 @@ left: 0;
 right: 0;
 top: -9999px;
 bottom: -9999px;
-/* background-color: rgba(255,255,255,0.2); */
 z-index: -1;
 }
 /* BACKGROUND COLOUR OF WEATHER PAGE */
 .weather-page{
-/* background-color: #ccc; */
-/* background: linear-gradient(to right bottom, #49a09d, #5f2c82); */
 background-color: #f0f0f0;
 background-repeat: no-repeat;
 background-attachment: fixed;
@@ -204,9 +156,8 @@ margin-bottom: 5px;
   justify-content: center;
   align-items: center;
 }
-.homepage-form-box{
-  /* background-color: #b3ccff; */
   /* controls position of title and formbox */
+.homepage-form-box{
   height: 125px;
   }
 .title{
@@ -216,19 +167,23 @@ margin-bottom: 5px;
   line-height: 30px;
   font-weight: 5000;
   letter-spacing: 3px;
-  padding-left: 40px;
+  /* text-align: center; */
+  padding-left: 60px;
 }
 .actual-field{
   height: 50px;
 }
-.test{
+.inner-form-box{
   background-color: whitesmoke;
   height: 50px;
   width: 300px;
   border: none;
   border-radius: 25px;
   outline: none;
-  padding-left: 50px;
+  text-align: center;
+  /* margin-right: auto; */
+  /* padding-right: 50px; */
+  
 }
 .search-btn{
   height: 40px;
