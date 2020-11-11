@@ -1,14 +1,11 @@
-# Weather Forecast APP
+# Weather Forecast Application
 Live Site:
 https://forecast-application-to.herokuapp.com/
 
 # Summary
-This is my weather forecast app. Thus far I have been able to make a request to the Open Weather Map API using the weather forecast API and set up index.ejs and weather.ejs to view response as HTML file.
+This weather forecast application utilises the OpenWeatherMap API in order to display a 5 day weather forecast in any worldwide location or city.
 - 5 day weather forecast API docs:
 https://openweathermap.org/forecast5#name5
-- The forecast API is a 5 day forecast available at any location or city. It includes weather data every 3 hours.
-- The code for this can be found in the app.js file
-
 
 # Languages
 - JavaScript
