@@ -90,7 +90,8 @@ app.post("/", function (req, res) {
 
 
 //ROUTE TO WEATHER PAGE
-app.get("/weather", function (req, res) {
+app.get("/weather", function (error, req, res) {
+  //error handling here using regex???
   res.render("weather", { forecast: null, error: null })
 });
 

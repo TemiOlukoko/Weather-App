@@ -21,14 +21,15 @@ nav{
  height: 68px;
  width: 100%;
 }
-/* STYLING WEATHER TITLE */
+/* STYLING WEATHER TITLE ON WEATHER PAGE*/
 a.logo{
  color: black;
- font-size: 23px;
+ font-size: 34.5px;
  line-height: 30px;
- /* controls how far along 'weather title' is */
  font-weight: 1000;
- margin-right: 15px;
+  /* controls how far along searchbox is */
+ margin-right: 10px;
+ margin-left: -65px;
 }
 /* STYLING YOUR ACCOUNT, HOME, SIGN UP, LOGIN LINKS */
 a.active, a:hover{
@@ -62,21 +63,24 @@ label.logo{
   display: none;
 }
 }
-/* SEARCH BAR BOX*/
+/* SEARCH BAR BOX ON WEATHER PAGE*/
 .form-box{
 background-color: #b0d7ff;
 height: 55px;
-padding-top: 8px;
+padding-top: 10px;
 padding-left: 200px;
 }
-/* STYLE SEARCH FIELD INSIDE SEARCH BOX */
+/* STYLE SEARCH FIELD INSIDE SEARCH BOX ON WEATHER PAGE */
 .search-field{
-height: 5vh;
+height: 5.5vh;
 width: 69%;
 font-family: 'Montserrat', sans-serif;
 padding-left: 9px;
 border-width: 0ch;
-margin-bottom: 20px;
+font-size: 17px;
+/* align text in center*/
+text-align: center;
+border-radius: 1px;
 }
 /* STYLE MAGNIFYING GLASS ICON */
 .fa-search{
@@ -87,12 +91,6 @@ border-radius: 5%;
 /* border-width: 20ch; */
 background-color: #b0d7ff;
 border-width: 0ch;
-}
-/* STYLING WEATHER EJS PAGE */
-.welcome-message{
-margin-left: 380px;
-padding-top: 10px;
-padding-bottom: 15px;
 }
 /* STYLE TABLE */
 table {
@@ -110,19 +108,23 @@ color: #5e5e5e;
 th {
 text-align: left;
 }
-/* HEAD OF TABLE WITH DATE, TEMP ETC*/
+/* HEAD OF TABLE WITH DATE, TEMP HEADINGS ETC*/
 thead th {
 background-color: #e0f0ff;
 color: #5e5e5e;
-font-size: 14px;
+font-size: 21px;
 font-weight: bold;
 height: 50px;
+/* text-align: center; */
 }
 tbody tr:hover {
   background-color: rgba(255,255,255,0.3);
 }
+/* body of table with all values */
 tbody td {
 position: relative;
+font-size: 21px;
+text-align: center;
 }
 tbody td:hover::before {
 content: "";
@@ -164,12 +166,12 @@ margin-bottom: 5px;
 .title{
   color: black;
   padding-bottom: 20px;
-  font-size: 80px;
+  font-size: 75px;
   line-height: 30px;
   font-weight: 5000;
   letter-spacing: 3px;
   /* text-align: center; */
-  padding-left: 120px;
+  padding-left: 136px;
 }
 .actual-field{
   height: 50px;
@@ -183,19 +185,20 @@ margin-bottom: 5px;
   border-radius: 25px;
   outline: none;
   text-align: center;
-  font-size: 18px;
+  font-size: 21px;
   margin-left: 50px;
   margin-top: 25px;
   
 }
+/* styling search button with magnifying glass icon inside */
 .search-btn{
   height: 40px;
   outline: none;
   width: 40px;
   border: none;
   border-radius: 25px;
-}
-.search-btn{
   background-color: whitesmoke;
   cursor: pointer;
+  margin-left: 10px;
 }
+
