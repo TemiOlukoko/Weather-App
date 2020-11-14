@@ -77,7 +77,7 @@ width: 69%;
 font-family: 'Montserrat', sans-serif;
 padding-left: 9px;
 border-width: 0ch;
-font-size: 17px;
+font-size: 20px;
 /* align text in center*/
 text-align: center;
 border-radius: 1px;
@@ -86,6 +86,7 @@ border-radius: 1px;
 /* STYLE MAGNIFYING GLASS ICON */
 .fa-search{
 color: black;
+font-size: 17px;
 border-radius: 5%;
 }
 .btn-style{
