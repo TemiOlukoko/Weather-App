@@ -159,35 +159,37 @@ margin-bottom: 5px;
   /* controls position of title and formbox */
 .homepage-form-box{
   height: 125px;
+  /* padding-left: 150px; */
   }
 .title{
   color: black;
   padding-bottom: 20px;
-  font-size: 40px;
+  font-size: 80px;
   line-height: 30px;
   font-weight: 5000;
   letter-spacing: 3px;
   /* text-align: center; */
-  padding-left: 60px;
+  padding-left: 120px;
 }
 .actual-field{
   height: 50px;
 }
+/* controls attributes inside search box */
 .inner-form-box{
   background-color: whitesmoke;
-  height: 50px;
-  width: 300px;
+  height: 60px;
+  width: 500px;
   border: none;
   border-radius: 25px;
   outline: none;
   text-align: center;
-  /* margin-right: auto; */
-  /* padding-right: 50px; */
+  font-size: 18px;
+  margin-left: 50px;
+  margin-top: 25px;
   
 }
 .search-btn{
   height: 40px;
-  /* background-color: #bfbfbf; */
   outline: none;
   width: 40px;
   border: none;
