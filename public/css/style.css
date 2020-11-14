@@ -66,7 +66,7 @@ label.logo{
 /* SEARCH BAR BOX ON WEATHER PAGE*/
 .form-box{
 background-color: #b0d7ff;
-height: 55px;
+height: 65px;
 padding-top: 10px;
 padding-left: 200px;
 }
@@ -81,6 +81,7 @@ font-size: 17px;
 /* align text in center*/
 text-align: center;
 border-radius: 1px;
+/* padding-bottom: 50px; */
 }
 /* STYLE MAGNIFYING GLASS ICON */
 .fa-search{
@@ -115,7 +116,7 @@ color: #5e5e5e;
 font-size: 21px;
 font-weight: bold;
 height: 50px;
-/* text-align: center; */
+text-align: center;
 }
 tbody tr:hover {
   background-color: rgba(255,255,255,0.3);
