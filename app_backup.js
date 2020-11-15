@@ -1,17 +1,22 @@
 //USING THE FORECAST API
+//Require request package
 const request = require("request"); //use http also
+//Require express framework
 const express = require("express");
-const app = express(); 
+const app = express(); //invoke express
 //Requiring body parser (express middleware)
 const bodyParser = require("body-parser");
+//const { exception } = require("console");
 
 //Access all static files within public folder
 app.use(express.static("public"));
 //Access all static files within body-parser folder
 app.use(bodyParser.urlencoded({ extended: true }));
+//Setup template engine
 app.set("view engine", "ejs");
 
 // //INPUT VARIABLES
+//created value for api key
 const url = "https://api.openweathermap.org/data/2.5/forecast";
 const apiKey = "951dfd3c3028861db0a5daec2f517d79";
 
@@ -42,7 +47,11 @@ app.post("/", function (req, res) {
       //parse data into object
       const weatherData = JSON.parse(body);
       //getting list out of weatherData object
+      // const nameSearch = weatherData.city.name;
+      // console.log(weatherData);
+      // console.log(nameSearch);
       const reports = weatherData.list;
+
       //creating empty array that data will go into
       const reportsByDay = {};
 
@@ -68,13 +77,16 @@ app.post("/", function (req, res) {
         }
         reportsByDay[day].push({ ...item }); //... is the spread operator. Copies code from one array into another
         //reportsByDay at the begining is the same as []
+        //console.log(reportsByDay);
         return reportsByDay;
       });
-      res.render("weather", {weatherData: Array.from([...new Set(weatherDataList)])});//Set is a DS removes duplicates and turns into array
-    
+      res.render("weather", {weatherData: Array.from([...new Set(weatherDataList)])});//removes duplicates and turns into array
+      // res.render("weather", {weatherData: nameSearch, error: null});
     }
   });
 });
+
+
 
 //ROUTE TO WEATHER PAGE
 app.get("/weather", function (error, req, res) {
